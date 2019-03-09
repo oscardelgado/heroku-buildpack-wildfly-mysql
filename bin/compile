@@ -48,7 +48,7 @@ $JBOSS_HOME/bin/jboss-cli.sh --connect --command="/subsystem=datasources/jdbc-dr
 $JBOSS_HOME/bin/jboss-cli.sh --connect --command="/subsystem=datasources:installed-drivers-list"
 
 # 3'5 datasource
-~/.jboss/wildfly-10.1.0.Final/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDSRRRRRR:add(jndi-name=java:jboss/datasources/MySQLDSRRRRRR, user-name="b096641c9552a0", password="41c2586c", driver-name=mysql, connection-url=jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_a304a837b2c7d20)"
+$JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDSRRRRRR:add(jndi-name=java:jboss/datasources/MySQLDSRRRRRR, user-name="b096641c9552a0", password="41c2586c", driver-name=mysql, connection-url=jdbc:mysql://us-cdbr-iron-east-03.cleardb.net/heroku_a304a837b2c7d20)"
 # 3'55 list datasources 
 $JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources:read-resource"
 
