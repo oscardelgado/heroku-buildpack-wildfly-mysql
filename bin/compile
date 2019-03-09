@@ -25,6 +25,9 @@ echo "-----> downloaded"
 sha1sum mysql-connector-java-${MYSQL_VERSION}.jar | grep $MYSQL_SHA1 > /dev/null 2>&1
 echo "-----> verified"
 
+env
+set
+
 echo $CLEARDB_DATABASE_URL
 
 # 1) startup
