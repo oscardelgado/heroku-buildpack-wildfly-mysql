@@ -54,7 +54,7 @@ $JBOSS_HOME/bin/jboss-cli.sh --connect --command="/subsystem=datasources:install
 $JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:add(jndi-name=java:jboss/datasources/MySQLDS, user-name="b096641c9552a0", password="41c2586c", driver-name=mysql, connection-url=jdbc:mysql://us-cdbr-iron-east-03.cleardb.net:3306/heroku_a304a837b2c7d20)"
 $JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:write-attribute(name=max-pool-size,value=10)"
 $JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:write-attribute(name=validate-on-match,value=true)"
-$JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:write-attribute(name=check-valid-connection-sql,value='select 1')"
+$JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:write-attribute(name=check-valid-connection-sql,value=\"select 1\")"
 $JBOSS_HOME/bin/jboss-cli.sh --connect --controller=localhost:9990 "/subsystem=datasources/data-source=MySQLDS:write-attribute(name=exception-sorter-class-name,value="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter")"
 
 # 3'55 list datasources 
