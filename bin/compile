@@ -3,7 +3,7 @@
 
 # versions
 MYSQL_VERSION="5.1.29"
-MYSQL_SHA1="91798a4463050f61598122fe7fdc24aa196dfc0c"
+MYSQL_SHA1="4cb77180cb95384ca87026c0b36ed2929c8d6b12"
 
 BP_DIR=$(cd $(dirname $0)/..; pwd) # absolute path
 BIN_DIR=$BP_DIR/bin
@@ -20,10 +20,16 @@ JBOSS_HOME=$BUILD_DIR/.jboss/wildfly-16.0.0.Final
 : "${JBOSS_HOME:?You need to install Wildfly first. JBOSS_HOME environment variable not found.}"
 
 echo "-----> Downloading mysql connector ${MYSQL_VERSION}... "
-curl -O http://central.maven.org/maven2/mysql/mysql-connector-java/${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar
+curl -O https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-java-${MYSQL_VERSION}.tar.gz
 echo "-----> downloaded"
-sha1sum mysql-connector-java-${MYSQL_VERSION}.jar | grep $MYSQL_SHA1 > /dev/null 2>&1
+sha1sum mysql-connector-java-${MYSQL_VERSION}.tar.gz | grep $MYSQL_SHA1 > /dev/null 2>&1
 echo "-----> verified"
+
+tar zxvf mysql-connector-java-${MYSQL_VERSION}.tar.gz
+mv mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar .
+echo "-----> the jar:"
+ls
+echo "-----> have you seen it?"
 
 env
 set
