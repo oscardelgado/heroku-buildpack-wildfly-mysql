@@ -26,7 +26,7 @@ sha1sum mysql-connector-java-${MYSQL_VERSION}.zip | grep $MYSQL_SHA1 > /dev/null
 echo "-----> verified"
 
 echo "-----> uncompress:"
-unzip mysql-connector-java-${MYSQL_VERSION}.zip
+zip -FF mysql-connector-java-${MYSQL_VERSION}.zip --out Repaired-mysql-connector-java-${MYSQL_VERSION}.zip | unzip
 echo "-----> ls:"
 ls
 
