@@ -25,7 +25,7 @@ echo "-----> downloaded"
 sha1sum mysql-connector-java-${MYSQL_VERSION}.tar.gz | grep $MYSQL_SHA1 > /dev/null 2>&1
 echo "-----> verified"
 
-tar zxvf mysql-connector-java-${MYSQL_VERSION}.tar.gz
+tar -zxvf mysql-connector-java-${MYSQL_VERSION}.tar.gz
 mv mysql-connector-java-${MYSQL_VERSION}/mysql-connector-java-${MYSQL_VERSION}.jar .
 echo "-----> the jar:"
 ls
