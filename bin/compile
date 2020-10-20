@@ -26,7 +26,7 @@ sha1sum mysql-connector-java-${MYSQL_VERSION}.tar.gz | grep $MYSQL_SHA1 > /dev/n
 echo "-----> verified"
 
 echo "-----> uncompress:"
-tar -xf mysql-connector-java-${MYSQL_VERSION}.tar.gz
+gzip -dc mysql-connector-java-${MYSQL_VERSION}.tar.gz | tar -xvzf -
 echo "-----> ls:"
 ls
 
