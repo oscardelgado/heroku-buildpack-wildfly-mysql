@@ -20,14 +20,13 @@ JBOSS_HOME=$BUILD_DIR/.jboss/wildfly-16.0.0.Final
 : "${JBOSS_HOME:?You need to install Wildfly first. JBOSS_HOME environment variable not found.}"
 
 echo "-----> Downloading mysql connector ${MYSQL_VERSION}... "
-curl -O https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-java-${MYSQL_VERSION}.tar.gz
+wget https://downloads.mysql.com/archives/get/p/3/file/mysql-connector-java-${MYSQL_VERSION}.tar.gz
 echo "-----> downloaded"
 sha1sum mysql-connector-java-${MYSQL_VERSION}.tar.gz | grep $MYSQL_SHA1 > /dev/null 2>&1
 echo "-----> verified"
 
 echo "-----> uncompress:"
-zcat mysql-connector-java-${MYSQL_VERSION}.tar.gz > mysql-connector-java-${MYSQL_VERSION}.tar
-tar -xvf mysql-connector-java-${MYSQL_VERSION}.tar
+tar -zxvf mysql-connector-java-${MYSQL_VERSION}.tar.gz
 echo "-----> ls:"
 ls
 
